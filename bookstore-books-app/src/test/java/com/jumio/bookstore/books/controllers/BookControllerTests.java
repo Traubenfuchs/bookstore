@@ -105,8 +105,8 @@ class BookControllerTests {
       .setTitle("Harry Potter und der Stein der Weisen (Harry Potter 1)")
       .setIsbn("9783551557414")
       .setPrice(20000)
-      .setDtUpdate(Instant.parse("2019-06-21T14:57:17+00:00"))
-      .setDtCreation(Instant.parse("2019-06-21T14:57:17+00:00"));
+      .setDtUpdate(Instant.parse("2019-06-21T14:57:17+00:00.00Z"))
+      .setDtCreation(Instant.parse("2019-06-21T14:57:17+00:00.00Z"));
   }
 
   private BookDto testBook2() {
@@ -115,8 +115,8 @@ class BookControllerTests {
       .setTitle("Harry Potter und die Kammer des Schreckens")
       .setIsbn("9783551354020")
       .setPrice(899)
-      .setDtUpdate(Instant.parse("2019-06-21T14:57:17+00:00"))
-      .setDtCreation(Instant.parse("2019-06-21T14:57:17+00:00"));
+      .setDtUpdate(Instant.parse("2019-06-21T14:57:17+00:00.00Z"))
+      .setDtCreation(Instant.parse("2019-06-21T14:57:17+00:00.00Z"));
   }
 
   private BookDto testBook3() {
@@ -125,7 +125,7 @@ class BookControllerTests {
       .setTitle("Das inoffizielle Harry-Potter-Buch der Zauberei")
       .setIsbn("9783742301901")
       .setPrice(25000)
-      .setDtUpdate(Instant.parse("2019-06-21T14:57:17+00:00"))
-      .setDtCreation(Instant.parse("2019-06-21T14:57:17+00:00"));
+      .setDtUpdate(Instant.parse("2019-06-21T14:57:17+00:00.00Z"))
+      .setDtCreation(Instant.parse("2019-06-21T14:57:17+00:00.00Z"));
   }
 }
