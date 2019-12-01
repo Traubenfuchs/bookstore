@@ -1,5 +1,5 @@
 # bookstore
-This repository contains a little microservice showcase for my Jumio interview.
+This repository contains a little microservice showcase.
 
 Normally I would have asked what split of features between the different microservices is asked for, but in the spirit of speeding things up I simply made the following assumptions:
 - There is one microservice (`bookstore-books-app`) that offers information on books
