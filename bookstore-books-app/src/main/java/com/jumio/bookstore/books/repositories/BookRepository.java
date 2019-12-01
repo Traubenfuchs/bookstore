@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.*;
 
 public interface BookRepository extends JpaRepository<BookEntity, String> {
   BookEntity getByIsbn(String isbn);
+
+  BookEntity getByUuid(String uuid);
 }

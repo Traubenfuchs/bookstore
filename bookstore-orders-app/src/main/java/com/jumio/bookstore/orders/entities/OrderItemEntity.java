@@ -1,5 +1,6 @@
 package com.jumio.bookstore.orders.entities;
 
+import com.jumio.bookstore.entities.*;
 import lombok.*;
 import lombok.experimental.*;
 
@@ -17,4 +18,7 @@ public class OrderItemEntity extends BaseEntity<OrderItemEntity> {
 
   @Column(name = "QUANTITY", nullable = false)
   private Integer quantity;
+
+  @Column(name = "BOOK_UUID", nullable = false)
+  private String bookUuid;
 }

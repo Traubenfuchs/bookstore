@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <include file="classpath:db/changelog-prod.xml"/>
+
+    <changeSet id="201911292009" author="alexander.satek">
+        <insert tableName="BOOKS">
+            <column name="UUID">9a020cba-3786-429f-8843-2723a57a8b8a</column>
+            <column name="TITLE">Harry Potter und der Stein der Weisen (Harry Potter 1)</column>
+            <column name="ISBN">9783551557414</column>
+            <column name="PRICE">20000</column>
+            <column name="DT_UPDATE">2019-06-21T14:57:17+00:00</column>
+            <column name="DT_CREATION">2019-06-21T14:57:17+00:00</column>
+        </insert>
+        <insert tableName="BOOKS">
+            <column name="UUID">b22498f5-c3de-410f-9d61-5ccf9c30f18b</column>
+            <column name="TITLE">Harry Potter und die Kammer des Schreckens</column>
+            <column name="ISBN">9783551354020</column>
+            <column name="PRICE">899</column>
+            <column name="DT_UPDATE">2019-06-21T14:57:17+00:00</column>
+            <column name="DT_CREATION">2019-06-21T14:57:17+00:00</column>
+        </insert>
+        <insert tableName="BOOKS">
+            <column name="UUID">3ff8c6b0-27e7-4c80-8e72-903ecec6e8e1</column>
+            <column name="TITLE">Das inoffizielle Harry-Potter-Buch der Zauberei</column>
+            <column name="ISBN">9783742301901</column>
+            <column name="PRICE">25000</column>
+            <column name="DT_UPDATE">2019-06-21T14:57:17+00:00</column>
+            <column name="DT_CREATION">2019-06-21T14:57:17+00:00</column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

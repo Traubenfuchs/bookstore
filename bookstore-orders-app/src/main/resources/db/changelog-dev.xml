@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <include file="classpath:db/changelog-prod.xml"/>
+
+    <changeSet id="201911301419" author="alexander.satek">
+        <insert tableName="ORDERS">
+            <column name="UUID">O1</column>
+            <column name="DT_UPDATE">2019-06-21T14:57:17+00:00</column>
+            <column name="DT_CREATION">2019-06-21T14:57:17+00:00</column>
+
+            <column name="USER_ID">user_id_1</column>
+            <column name="ORDER_STATE">CREATED</column>
+            <column name="PAID">true</column>
+            <column name="ADDRESS">Tiefer Graben 19</column>
+        </insert>
+        <insert tableName="ORDERS">
+            <column name="UUID">O2</column>
+            <column name="DT_UPDATE">2019-06-21T14:57:17+00:00</column>
+            <column name="DT_CREATION">2019-06-21T14:57:17+00:00</column>
+
+            <column name="USER_ID">user_id_2</column>
+            <column name="ORDER_STATE">CANCELLED</column>
+            <column name="PAID">true</column>
+            <column name="ADDRESS">Tiefer Graben 19</column>
+        </insert>
+        <insert tableName="ORDERS">
+            <column name="UUID">O3</column>
+            <column name="DT_UPDATE">2019-06-21T14:57:17+00:00</column>
+            <column name="DT_CREATION">2019-06-21T14:57:17+00:00</column>
+
+            <column name="USER_ID">user_id_3</column>
+            <column name="ORDER_STATE">SHIPPED</column>
+            <column name="PAID">true</column>
+            <column name="ADDRESS">Tiefer Graben 19</column>
+        </insert>
+
+        <insert tableName="ORDER_ITEMS">
+            <column name="UUID">OI1</column>
+            <column name="DT_UPDATE">2019-06-21T14:57:17+00:00</column>
+            <column name="DT_CREATION">2019-06-21T14:57:17+00:00</column>
+
+            <column name="FK_ORDER_UUID">O1</column>
+            <column name="QUANTITY">5</column>
+            <column name="BOOK_UUID">a</column>
+
+        </insert>
+        <insert tableName="ORDER_ITEMS">
+            <column name="UUID">OI2</column>
+            <column name="DT_UPDATE">2019-06-21T14:57:17+00:00</column>
+            <column name="DT_CREATION">2019-06-21T14:57:17+00:00</column>
+
+            <column name="FK_ORDER_UUID">O1</column>
+            <column name="QUANTITY">3</column>
+            <column name="BOOK_UUID">b</column>
+
+        </insert>
+
+        <insert tableName="ORDER_ITEMS">
+            <column name="UUID">OI3</column>
+            <column name="DT_UPDATE">2019-06-21T14:57:17+00:00</column>
+            <column name="DT_CREATION">2019-06-21T14:57:17+00:00</column>
+
+            <column name="FK_ORDER_UUID">O2</column>
+            <column name="QUANTITY">7</column>
+            <column name="BOOK_UUID">c</column>
+
+        </insert>
+
+        <insert tableName="ORDER_ITEMS">
+            <column name="UUID">OI4</column>
+            <column name="DT_UPDATE">2019-06-21T14:57:17+00:00</column>
+            <column name="DT_CREATION">2019-06-21T14:57:17+00:00</column>
+
+            <column name="FK_ORDER_UUID">O3</column>
+            <column name="QUANTITY">8</column>
+            <column name="BOOK_UUID">d</column>
+
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

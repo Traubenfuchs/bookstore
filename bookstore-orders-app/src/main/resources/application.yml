@@ -1,5 +1,17 @@
 spring:
-  liquibase:
-    enabled: false
   application:
     name: bookstore-orders-app
+  jpa:
+    hibernate:
+      ddl-auto: validate
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

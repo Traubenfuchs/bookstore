@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="201911301420" author="alexander.satek">
+        <createTable tableName="ORDERS">
+            <column name="UUID" type="VARCHAR">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="DT_CREATION" type="TIMESTAMP">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="DT_UPDATE" type="TIMESTAMP">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="USER_ID" type="NVARCHAR">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ORDER_STATE" type="VARCHAR">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PAID" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ADDRESS" type="VARCHAR">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="ORDER_ITEMS">
+            <column name="UUID" type="VARCHAR">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="DT_CREATION" type="TIMESTAMP">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="DT_UPDATE" type="TIMESTAMP">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="FK_ORDER_UUID" type="VARCHAR">
+                <constraints nullable="false" foreignKeyName="FK_ORDER_UUID" references="ORDERS(UUID)"/>
+            </column>
+            <column name="QUANTITY" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BOOK_UUID" type="VARCHAR">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

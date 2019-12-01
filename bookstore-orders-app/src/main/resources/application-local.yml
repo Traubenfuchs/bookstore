@@ -4,3 +4,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8000/eureka
+spring:
+  liquibase:
+    change-log: classpath:db/changelog-dev.xml
+  security:
+    oauth2:
+      host: https://traubenfuchs.eu.auth0.com
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${spring.security.oauth2.host}/.well-known/jwks.json #used to check incoming JWT

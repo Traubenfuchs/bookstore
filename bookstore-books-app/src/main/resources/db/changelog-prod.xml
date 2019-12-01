@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20191291723" author="alexander.satek">
+        <createTable tableName="BOOKS">
+            <column name="UUID" type="VARCHAR">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="TITLE" type="NVARCHAR">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ISBN" type="VARCHAR(13)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRICE" type="INT"/>
+            <column name="DT_CREATION" type="TIMESTAMP">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="DT_UPDATE" type="TIMESTAMP">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,5 +1,6 @@
 spring:
-  liquibase:
-    enabled: false
   application:
     name: bookstore-books-app
+  jpa:
+    hibernate:
+      ddl-auto: validate

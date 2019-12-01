@@ -1,13 +1,18 @@
 package com.jumio.bookstore.books.services;
 
+import com.jumio.bookstore.books.entities.*;
 import com.jumio.bookstore.books.mappers.*;
 import com.jumio.bookstore.books.repositories.*;
-import com.jumio.bookstore.orders.dtos.*;
+import com.jumio.bookstore.data.dtos.*;
+import org.springframework.http.*;
 import org.springframework.stereotype.*;
+import org.springframework.web.server.*;
 
 import java.util.*;
-import java.util.stream.*;
 
+/**
+ * Offers CRUD operations for the Book resource.
+ */
 @Service
 public class BookService {
   private final BookRepository bookRepository;
@@ -22,14 +27,24 @@ public class BookService {
   }
 
   public BookDto getByIsbn(String isbn) {
-    return bookMapper.entityToDto(bookRepository.getByIsbn(isbn));
+    BookEntity book = bookRepository.getByIsbn(isbn);
+    throwIfBookDoesNotExist(book);
+    return bookMapper.entityToDto(book);
   }
 
-  public BookDto getByUuid(String uuid) {
-    return bookMapper.entityToDto(bookRepository.getOne(uuid));
+  public BookDto getByUuid(String bookUuid) {
+    BookEntity book = bookRepository.getByUuid(bookUuid);
+    throwIfBookDoesNotExist(book);
+    return bookMapper.entityToDto(book);
   }
 
   public Set<BookDto> getAll() {
-    return bookRepository.findAll().stream().map(bookMapper::entityToDto).collect(Collectors.toSet());
+    return bookMapper.entitiesToDtos(bookRepository.findAll());
+  }
+
+  private void throwIfBookDoesNotExist(BookEntity bookEntity) {
+    if (bookEntity == null) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Requested book not found.");
+    }
   }
 }

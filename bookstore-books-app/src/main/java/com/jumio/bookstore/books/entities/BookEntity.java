@@ -1,6 +1,6 @@
 package com.jumio.bookstore.books.entities;
 
-import com.jumio.bookstore.orders.entities.*;
+import com.jumio.bookstore.entities.*;
 import lombok.*;
 import lombok.experimental.*;
 
@@ -15,6 +15,9 @@ public class BookEntity extends BaseEntity<BookEntity> {
   @Column(name = "TITLE", nullable = false)
   private String title;
 
+  /**
+   * It is assumed that an ISBN-13 is used.
+   */
   @Column(name = "ISBN", nullable = false, unique = true)
   private String isbn;
 

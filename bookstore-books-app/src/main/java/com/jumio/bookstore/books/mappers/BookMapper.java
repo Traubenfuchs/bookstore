@@ -1,12 +1,14 @@
 package com.jumio.bookstore.books.mappers;
 
 import com.jumio.bookstore.books.entities.*;
-import com.jumio.bookstore.orders.dtos.*;
+import com.jumio.bookstore.data.dtos.*;
 import org.mapstruct.*;
+
+import java.util.*;
 
 @Mapper(componentModel = "spring")
 public interface BookMapper {
   BookDto entityToDto(BookEntity source);
 
-  BookEntity dtoToEntity(BookDto destination);
+  Set<BookDto> entitiesToDtos(List<BookEntity> source);
 }
